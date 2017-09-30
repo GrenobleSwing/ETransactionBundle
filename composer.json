@@ -1,0 +1,35 @@
+{
+    "name": "gs/etransaction",
+    "license": "GPL-3.0",
+    "type": "library",
+	"authors": [
+		{
+			"name": "Julien Billoudet",
+			"email": "bibi020886@gmail.com"
+		}
+	],
+    "autoload": {
+        "psr-0": {
+            "GS\\ETransactionBundle": ""
+        }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/symfony": "^3.2",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "doctrine/orm": "^2.5",
+        "egeloen/ordered-form-bundle": "^2.0",
+        "michaeldegroot/doctrine-encrypt-bundle": "^3.0",
+        "sensio/distribution-bundle": "^5.0",
+        "sensio/framework-extra-bundle": "^3.0.2",
+        "stof/doctrine-extensions-bundle": "^1.2",
+        "suncat/mobile-detect-bundle": "^1.0",
+        "symfony/assetic-bundle": "^2.8"
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "sensio/generator-bundle": "^3.0"
+    },
+	"target-dir": "GS/ETransactionBundle"
+}
