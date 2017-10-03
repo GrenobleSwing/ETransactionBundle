@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class IpnController extends Controller
 {
     /**
-     * @Route("/ipn", name="gse_transaction_ipn")
+     * @Route("/ipn", name="gs_etran_ipn")
      */
     public function ipnAction()
     {

@@ -9,7 +9,7 @@ use Symfony\Component\EventDispatcher\Event;
  */
 class IpnEvent extends Event
 {
-    const NAME = 'gse_transaction.ipn.received';
+    const NAME = 'gs_etran.ipn.received';
 
     /**
      * @var array
