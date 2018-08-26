@@ -16,7 +16,7 @@ class ButtonService
         $this->twig = $twig;
     }
 
-    private function createButton(Payment $payment, $msg, $template)
+    private function createButton(Payment $payment, $msg, $template, $text = "Payer")
     {
         $binKey = pack("H*", $payment->getEnvironment()->getHmacKey());
 
@@ -33,31 +33,32 @@ class ButtonService
         return $this->twig->render($template, array(
             'payment' => $payment,
             'hmac' => $hmac,
+            'text' => $text,
         ));
     }
 
-    public function createButton1x(Payment $payment)
+    public function createButton1x(Payment $payment, $text = "Payer en 1 fois")
     {
         // On crée la chaîne à hacher sans URLencodage
         $msg = $payment->getStringFullPayment();
 
-        return $this->createButton($payment, $msg, 'GSETransactionBundle:Default:button1x.html.twig');
+        return $this->createButton($payment, $msg, 'GSETransactionBundle:Default:button1x.html.twig', $text);
     }
 
-    public function createButton2x(Payment $payment)
+    public function createButton2x(Payment $payment, $text = "Payer en 2 fois")
     {
         // On crée la chaîne à hacher sans URLencodage
         $msg = $payment->getStringPaymentIn2Times();
 
-        return $this->createButton($payment, $msg, 'GSETransactionBundle:Default:button2x.html.twig');
+        return $this->createButton($payment, $msg, 'GSETransactionBundle:Default:button2x.html.twig', $text);
     }
 
-    public function createButton3x(Payment $payment)
+    public function createButton3x(Payment $payment, $text = "Payer en 3 fois")
     {
         // On crée la chaîne à hacher sans URLencodage
         $msg = $payment->getStringPaymentIn3Times();
 
-        return $this->createButton($payment, $msg, 'GSETransactionBundle:Default:button3x.html.twig');
+        return $this->createButton($payment, $msg, 'GSETransactionBundle:Default:button3x.html.twig', $text);
     }
 
 }

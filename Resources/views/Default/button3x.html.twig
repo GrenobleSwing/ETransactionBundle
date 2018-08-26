@@ -14,5 +14,5 @@
     <input type="hidden" name="PBX_DATE2" value="{{- payment.time|date_modify('+2 month')|date("d/m/Y") -}}">
     <input type="hidden" name="PBX_2MONT2" value="{{- total2 -}}">
     <input type="hidden" name="PBX_HMAC" value="{{- hmac -}}">
-    <button type="submit" class="btn btn-default">Payer en 3 fois</button>
+    <button type="submit" class="btn btn-default">{{ text }}</button>
 </form>
