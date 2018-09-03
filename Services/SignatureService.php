@@ -120,7 +120,9 @@ class SignatureService
 
         openssl_free_key($publicKey);
 
-        $event = new IpnEvent($this->data, $result);
+        $remAddr = $this->request->server->get('REMOTE_ADDR');
+
+        $event = new IpnEvent($this->data, $remAddr, $result);
         $this->dispatcher->dispatch(IpnEvent::NAME, $event);
 
         return $result;

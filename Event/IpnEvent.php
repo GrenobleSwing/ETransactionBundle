@@ -22,14 +22,20 @@ class IpnEvent extends Event
     private $verified;
 
     /**
+     * @var string
+     */
+    private $remAddr;
+
+    /**
      * Constructor.
      *
      * @param array   $data
      * @param boolean $verified
      */
-    public function __construct(array $data, $verified = false)
+    public function __construct(array $data, $remAddr, $verified = false)
     {
         $this->data = $data;
+        $this->remAddr = $remAddr;
         $this->verified = (bool) $verified;
     }
 
@@ -52,4 +58,15 @@ class IpnEvent extends Event
     {
         return $this->verified;
     }
+
+    /**
+     * Returns IP contacting the IPN.
+     *
+     * @return string
+     */
+    public function getRemAddr()
+    {
+        return $this->remAddr;
+    }
+
 }
